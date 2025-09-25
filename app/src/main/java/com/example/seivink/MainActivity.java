@@ -22,38 +22,6 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        // MPAndroidChart offers various chart types. You can replace BarChart in the layout
-        // and in the code with other types like:
-        // - LineChart
-        // - PieChart
-        // - ScatterChart
-        // - CandleStickChart
-        // - BubbleChart
-        // - RadarChart
-        // For example, to use a PieChart, you would declare:
-        // PieChart pieChart = findViewById(R.id.pieChart); // Assuming you added a PieChart with this id in your XML
-        // And then populate it with PieData, PieDataSet, and PieEntry objects.
 
-        PieChart pieChart = findViewById(R.id.pieChart);
-
-        ArrayList<PieEntry> entries = new ArrayList<>();
-        entries.add(new PieEntry(10f, "Data 1"));
-        entries.add(new PieEntry(20f, "Data 2"));
-        entries.add(new PieEntry(30f, "Data 3"));
-        entries.add(new PieEntry(15f, "Data 4"));
-        entries.add(new PieEntry(25f, "Data 5"));
-
-        PieDataSet pieDataSet = new PieDataSet(entries, "Sample Pie Data");
-        pieDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
-        pieDataSet.setValueTextColor(Color.BLACK);
-        pieDataSet.setValueTextSize(16f);
-
-        PieData pieData = new PieData(pieDataSet);
-
-        pieChart.setData(pieData);
-        pieChart.getDescription().setEnabled(false);
-        pieChart.setCenterText("Sales");
-        pieChart.animateY(1000); // Animate the chart
-        pieChart.invalidate(); // refresh
     }
 }

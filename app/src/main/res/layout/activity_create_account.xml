@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_primary"
+    tools:context=".CreateAccountActivity">
+
+    <LinearLayout
+        android:id="@+id/top_bar_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/create_account_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Account"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:fontFamily="@font/reddit_bold"
+        android:layout_below="@id/top_bar_register"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/create_account_text"
+        android:layout_marginTop="32dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="@color/white"
+        android:layout_marginBottom="-30dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="32dp"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Full Name"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/reddit_regular"
+                    android:textSize="16sp"
+                    android:layout_marginTop="24dp" />
+
+                <EditText
+                    android:id="@+id/et_full_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_edittext_rounded"
+                    android:hint="example@example.com"
+                    android:textColorHint="@color/black"
+                    android:textColor="@color/black"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:inputType="textPersonName"
+                    android:fontFamily="@font/reddit_regular"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/reddit_regular"
+                    android:textSize="16sp"
+                    android:layout_marginTop="16dp" />
+
+                <EditText
+                    android:id="@+id/et_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_edittext_rounded"
+                    android:hint="example@example.com"
+                    android:textColorHint="@color/black"
+                    android:textColor="@color/black"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:inputType="textEmailAddress"
+                    android:fontFamily="@font/reddit_regular"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mobile Number"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/reddit_regular"
+                    android:textSize="16sp"
+                    android:layout_marginTop="16dp" />
+
+                <EditText
+                    android:id="@+id/et_mobile_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_edittext_rounded"
+                    android:hint="+ 123 456 789"
+                    android:textColorHint="@color/black"
+                    android:textColor="@color/black"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:inputType="phone"
+                    android:fontFamily="@font/reddit_regular"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Date Of Birth"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/reddit_regular"
+                    android:textSize="16sp"
+                    android:layout_marginTop="16dp" />
+
+                <EditText
+                    android:id="@+id/et_date_of_birth"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_edittext_rounded"
+                    android:hint="DD / MM / YYYY"
+                    android:textColorHint="@color/black"
+                    android:textColor="@color/black"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:inputType="date"
+                    android:fontFamily="@font/reddit_regular"
+                    android:textSize="16sp"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Password"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/reddit_regular"
+                    android:textSize="16sp"
+                    android:layout_marginTop="16dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_edittext_rounded">
+
+                    <EditText
+                        android:id="@+id/et_password_register"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:hint="••••••••"
+                        android:textColorHint="@color/black"
+                        android:textColor="@color/black"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="50dp"
+                        android:inputType="textPassword"
+                        android:fontFamily="@font/reddit_regular"
+                        android:textSize="16sp" />
+
+                    <ImageButton
+                        android:id="@+id/password_toggle_button_register"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:padding="12dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/baseline_visibility_off_24"
+                        app:tint="@color/black"
+                        android:contentDescription="Toggle Password Visibility" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Confirm Password"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/reddit_regular"
+                    android:textSize="16sp"
+                    android:layout_marginTop="16dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_edittext_rounded">
+
+                    <EditText
+                        android:id="@+id/et_confirm_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:hint="••••••••"
+                        android:textColorHint="@color/black"
+                        android:textColor="@color/black"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="50dp"
+                        android:inputType="textPassword"
+                        android:fontFamily="@font/reddit_regular"
+                        android:textSize="16sp" />
+
+                    <ImageButton
+                        android:id="@+id/confirm_password_toggle_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:padding="12dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/baseline_visibility_off_24"
+                        app:tint="@color/black"
+                        android:contentDescription="Toggle Confirm Password Visibility" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_terms_privacy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="By continuing, you agree to Terms of Use and Privacy Policy."
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/reddit_regular"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:layout_marginTop="24dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+
+
+                <Button
+                    android:id="@+id/button_signup_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Sign Up"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/reddit_bold"
+                    android:background="@drawable/bg_button_primary"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="24dp" />
+
+                <TextView
+                    android:id="@+id/tv_already_have_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Already have an account? Log In"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/reddit_regular"
+                    android:textSize="14sp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="16dp"/>
+
+            </LinearLayout>
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

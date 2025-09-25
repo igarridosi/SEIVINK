@@ -11,15 +11,9 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/robikaregular_edv9"
-
-        android:text="Seivink"
+        android:fontFamily="@font/reddit_sans_bold_italic"
+        android:text="SEIVINK"
         android:textSize="44sp" />
 
-    <com.github.mikephil.charting.charts.PieChart
-        android:id="@+id/pieChart"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginTop="16dp"/>
 
 </LinearLayout>
