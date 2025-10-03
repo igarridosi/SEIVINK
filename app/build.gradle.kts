@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.internal.Kapt3GradleSubplugin.Companion.findKaptConfiguration
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -40,6 +42,11 @@ android {
 }
 
 dependencies {
+    // Room components
+    implementation ("androidx.room:room-runtime:2.6.1")
+    findKaptConfiguration ("androidx.room:room-compiler:2.6.1")
+    implementation ("androidx.room:room-ktx:2.6.1")
+
     // Dependencias de Kotlin
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")

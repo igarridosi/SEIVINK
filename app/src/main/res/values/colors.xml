@@ -6,9 +6,9 @@
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="gray_text">#F2F2F2</color>
-    <color name="red_expense">#B51E2A</color> <!-- Nuevo color rojo -->
-    <color name="green_income">#3CA678</color> <!-- Nuevo color verde -->
-    <color name="gray_dark">#6B6B6B</color> <!-- Para texto secundario como "Good Morning" -->
-    <color name="progress_bar_background">#E0E0E0</color> <!-- Fondo de la barra de progreso -->
-    <color name="progress_bar_fill">#3CA678</color> <!-- Color de la barra de progreso (verde) -->
+    <color name="red_expense">#B51E2A</color>
+    <color name="green_income">#3CA678</color>
+    <color name="gray_dark">#6B6B6B</color>
+    <color name="progress_bar_background">#E0E0E0</color>
+    <color name="progress_bar_fill">#3CA678</color>
 </resources>
