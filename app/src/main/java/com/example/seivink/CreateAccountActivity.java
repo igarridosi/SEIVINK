@@ -21,6 +21,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.seivink.db.AppDatabase;
+import com.example.seivink.db.entity.User;
+
 import java.util.Calendar;
 
 public class CreateAccountActivity extends AppCompatActivity {
@@ -113,6 +116,8 @@ public class CreateAccountActivity extends AppCompatActivity {
                     // startActivity(new Intent(CreateAccountActivity.this, LoginActivity.class));
                     // finish();
                 }
+
+                registerUser();
             }
         });
 
@@ -185,5 +190,44 @@ public class CreateAccountActivity extends AppCompatActivity {
                     }
                 }, year, month, day);
         datePickerDialog.show();
+    }
+
+    private void registerUser() {
+        String fullName = etFullName.getText().toString().trim();
+        String email = etEmail.getText().toString().trim();
+        String password = etPassword.getText().toString().trim();
+        String confirmPassword = etConfirmPassword.getText().toString().trim();
+
+        if (fullName.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
+            Toast.makeText(this, "Por favor, completa todos los campos.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (!password.equals(confirmPassword)) {
+            Toast.makeText(this, "Las contraseñas no coinciden.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        String passwordHash = password; // Recordatorio: encriptar en una app real
+        User newUser = new User(0, email, fullName, passwordHash);
+
+        // Obtenemos la instancia de la base de datos
+        AppDatabase db = AppDatabase.Companion.getDatabase(getApplicationContext());
+
+        // --- CÓDIGO SIMPLIFICADO ---
+        // Comprobamos si el usuario ya existe
+        User existingUser = db.appDao().findUserByEmail(email);
+
+        if (existingUser == null) {
+            // Si no existe, lo insertamos. La llamada es directa.
+            db.appDao().insertUser(newUser);
+
+            Toast.makeText(this, "¡Registro exitoso! Por favor, inicia sesión.", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(CreateAccountActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+        } else {
+            // Si el correo ya está registrado, mostramos un error.
+            Toast.makeText(this, "Este correo electrónico ya está registrado.", Toast.LENGTH_SHORT).show();
+        }
     }
 }

@@ -19,6 +19,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.seivink.db.AppDatabase;
+import com.example.seivink.db.entity.User;
+
 public class LoginActivity extends AppCompatActivity {
 
     private EditText etUsernameEmail;
@@ -75,6 +78,7 @@ public class LoginActivity extends AppCompatActivity {
                     // startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     // finish();
                 }
+                loginUser();
             }
         });
 
@@ -110,5 +114,35 @@ public class LoginActivity extends AppCompatActivity {
         tvDontHaveAccount.setHighlightColor(android.R.color.transparent);
 
 
+    }
+    private void loginUser() {
+        String email = etUsernameEmail.getText().toString().trim();
+        String password = etPassword.getText().toString().trim();
+
+        if (email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(LoginActivity.this, "Por favor, ingresa correo y contraseña.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        String passwordHash = password; // Recordatorio: encriptar en una app real
+
+        AppDatabase db = AppDatabase.Companion.getDatabase(getApplicationContext());
+
+        // --- CÓDIGO SIMPLIFICADO ---
+        // Hacemos la consulta a la base de datos directamente
+        User user = db.appDao().loginUser(email, passwordHash);
+
+        if (user != null) {
+            // Login exitoso
+            Toast.makeText(LoginActivity.this, "¡Bienvenido, " + user.getFullName() + "!", Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            intent.putExtra("USER_ID", user.getId());
+            startActivity(intent);
+            finish();
+        } else {
+            // Credenciales incorrectas
+            Toast.makeText(LoginActivity.this, "Correo o contraseña incorrectos.", Toast.LENGTH_SHORT).show();
+        }
     }
 }
