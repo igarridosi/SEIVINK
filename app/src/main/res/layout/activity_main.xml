@@ -8,7 +8,6 @@
     android:background="#FFFFFF"
     tools:context=".MainActivity">
 
-    <!-- Contenedor principal que permite el desplazamiento vertical -->
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -23,7 +22,7 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- 1. Barra superior con Saludo y Notificación -->
+            <!-- Greeting -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -52,7 +51,7 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!-- 2. Tarjeta de Balance Total -->
+            <!-- Total Balance -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -79,8 +78,9 @@
                     android:fontFamily="@font/reddit_bold"/>
             </LinearLayout>
 
-            <!-- 3. Barra de Progreso de Ahorro -->
+            <!-- Progress Bar -->
             <LinearLayout
+                android:id="@+id/progress_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -89,6 +89,7 @@
                 android:layout_marginBottom="24dp">
 
                 <TextView
+                    android:id="@+id/progress_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Progreso de Ahorro Mensual"
@@ -112,7 +113,7 @@
                     android:layout_marginTop="8dp">
 
                     <TextView
-                        android:id="@+id/progress_percentage"
+                        android:id="@+id/savings_progress_percentage"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -120,7 +121,7 @@
                         android:textColor="@color/purple_primary"/>
 
                     <TextView
-                        android:id="@+id/target_amount"
+                        android:id="@+id/savings_target_amount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="$600 / $1000"
