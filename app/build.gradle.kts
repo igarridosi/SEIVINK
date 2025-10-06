@@ -36,11 +36,26 @@ android {
     }
 
     buildFeatures {
-        viewBinding = true
+        // viewBinding = true
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.4"
     }
 }
 
 dependencies {
+    val compose_bom_version = "2024.06.00"
+    implementation(platform("androidx.compose:compose-bom:$compose_bom_version"))
+    implementation("androidx.compose.ui:ui")
+    implementation("androidx.compose.ui:ui-graphics")
+    implementation("androidx.compose.ui:ui-tooling-preview")
+    implementation("androidx.compose.material3:material3")
+    implementation("androidx.activity:activity-compose:1.9.0") // ¡Muy importante!
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.3") // Recomendado para el futuro
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.3")
+    debugImplementation("androidx.compose.ui:ui-tooling")
+
     val room_version = "2.6.1"
 
     implementation("androidx.room:room-runtime:$room_version")
